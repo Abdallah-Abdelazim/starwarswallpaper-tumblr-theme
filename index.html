@@ -22,6 +22,9 @@
         <meta name="if:Related Posts" content="1">
         <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
+        <!-- StarWarsWallpaper.net theme edit begin -->
+        <meta name="text:Copyright name" content="{Username}">
+        <!-- StarWarsWallpaper.net theme edit end -->
         {/block:Hidden}
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -39,15 +42,27 @@
         <!--[if lt IE 9]>
             <script src="https://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
         <![endif]-->
+        
+        <!-- StarWarsWallpaper.net theme edit begin -->
+        <style type=“text/css”>
+        
+            @font-face {
+                font-family: starjedi;
+                src: url("https://static.tumblr.com/uugbxhs/nZ9q4h2f5/starjedi.ttf");
+            }
+            
+        </style>
+        <!-- StarWarsWallpaper.net theme edit end -->
 
         <style>
+        
             /* Colors */
             body {
                 background: {BackgroundColor};
             }
 
             .blog-title {
-                font-family: {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+                font-family: starjedi, {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
                 font-weight: {TitleFontWeight};
             }
 
@@ -136,6 +151,16 @@
                 }
 
             }
+
+            /* StarWarsWallpaper.net theme edit begin */
+            body {
+                background-image: url("https://static.tumblr.com/uugbxhs/4eRq46g70/sww_tumblr_bg.jpg");
+            }
+            
+            .post {
+                padding: 5px;
+            }
+            /* StarWarsWallpaper.net theme edit end */
 
             /* Custom CSS */
             {CustomCSS}
@@ -2121,5 +2146,17 @@
             })(window.jQuery);
         </script>
         {/block:IfSyntaxHighlighting}
+        
+        <!-- StarWarsWallpaper.net theme edit begin -->
+        {block:IfCopyrightName}
+        <footer id="footer">
+            <p>
+                <center><small>
+                    © <script type="text/javascript">document.write(new Date().getFullYear());</script> {text:Copyright name}
+                </small></center>
+            </p>
+        </footer>
+        {/block:IfCopyrightName}
+        <!-- StarWarsWallpaper.net theme edit end -->
     </body>
 </html>
