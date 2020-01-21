@@ -23,6 +23,7 @@
         <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
         <!-- StarWarsWallpaper.net theme edit begin -->
+        <meta name="if:Override title font with star jedi" content="1">
         <meta name="text:Copyright name" content="{Username}">
         <!-- StarWarsWallpaper.net theme edit end -->
         {/block:Hidden}
@@ -42,19 +43,17 @@
         <!--[if lt IE 9]>
             <script src="https://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
         <![endif]-->
-        
-        <!-- StarWarsWallpaper.net theme edit begin -->
-        <style type=“text/css”>
-        
-            @font-face {
-                font-family: starjedi;
-                src: url("https://static.tumblr.com/uugbxhs/nZ9q4h2f5/starjedi.ttf");
-            }
-            
-        </style>
-        <!-- StarWarsWallpaper.net theme edit end -->
 
         <style>
+            
+            /* StarWarsWallpaper.net theme edit begin */
+            {block:IfOverrideTitleFontWithStarJedi}
+            @font-face {
+                font-family: StarJedi;
+                src: url("https://static.tumblr.com/uugbxhs/nZ9q4h2f5/starjedi.ttf");
+            }
+            {/block:IfOverrideTitleFontWithStarJedi}
+            /* StarWarsWallpaper.net theme edit end */
         
             /* Colors */
             body {
@@ -62,7 +61,10 @@
             }
 
             .blog-title {
-                font-family: starjedi, {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+                 /* StarWarsWallpaper.net theme edit begin */
+                font-family: {block:IfOverrideTitleFontWithStarJedi}StarJedi,{/block:IfOverrideTitleFontWithStarJedi} 
+                    {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+                /* StarWarsWallpaper.net theme edit end */
                 font-weight: {TitleFontWeight};
             }
 
@@ -2149,11 +2151,9 @@
         
         <!-- StarWarsWallpaper.net theme edit begin -->
         {block:IfCopyrightName}
-        <footer id="footer">
+        <footer>
             <p>
-                <center><small>
-                    © <script type="text/javascript">document.write(new Date().getFullYear());</script> {text:Copyright name}
-                </small></center>
+                <center><small>© {CopyrightYears} {text:Copyright name}</small></center>
             </p>
         </footer>
         {/block:IfCopyrightName}
