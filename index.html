@@ -22,8 +22,10 @@
         <meta name="if:Related Posts" content="1">
         <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
+        
         <!-- StarWarsWallpaper.net theme edit begin -->
         <meta name="if:Override title font with star jedi" content="1">
+        <meta name="if:Show archive nav item" content="1">
         <meta name="text:Copyright name" content="{Username}">
         <!-- StarWarsWallpaper.net theme edit end -->
         {/block:Hidden}
@@ -298,9 +300,13 @@
                                 </li>
                                 {/block:Pages}
                             {/block:HasPages}
+                            <!-- StarWarsWallpaper.net theme edit begin -->
+                            {block:IfShowArchiveNavItem}
                             <li class="nav-item nav-item--archive">
                                 <a href="/archive" class="label external-page">{lang:Archive}</a>
                             </li>
+                            {/block:IfShowArchiveNavItem}
+                            <!-- StarWarsWallpaper.net theme edit end -->
                         </ul>
                     </nav>
                 </div>
