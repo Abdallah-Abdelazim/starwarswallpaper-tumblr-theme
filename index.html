@@ -23,11 +23,10 @@
         <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
         
-        <!-- StarWarsWallpaper.net theme edit begin -->
+        <!-- SWW -->
         <meta name="if:Override title font with star jedi" content="1">
         <meta name="if:Show archive nav item" content="1">
         <meta name="text:Copyright name" content="{Username}">
-        <!-- StarWarsWallpaper.net theme edit end -->
         {/block:Hidden}
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -48,25 +47,23 @@
 
         <style>
             
-            /* StarWarsWallpaper.net theme edit begin */
+            /* SWW */
             {block:IfOverrideTitleFontWithStarJedi}
             @font-face {
                 font-family: StarJedi;
                 src: url("https://static.tumblr.com/uugbxhs/nZ9q4h2f5/starjedi.ttf");
             }
             {/block:IfOverrideTitleFontWithStarJedi}
-            /* StarWarsWallpaper.net theme edit end */
-        
+
             /* Colors */
             body {
                 background: {BackgroundColor};
             }
 
             .blog-title {
-                 /* StarWarsWallpaper.net theme edit begin */
+                 /* SWW */
                 font-family: {block:IfOverrideTitleFontWithStarJedi}StarJedi,{/block:IfOverrideTitleFontWithStarJedi} 
                     {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
-                /* StarWarsWallpaper.net theme edit end */
                 font-weight: {TitleFontWeight};
             }
 
@@ -156,7 +153,7 @@
 
             }
 
-            /* StarWarsWallpaper.net theme edit begin */
+            /* SWW */
             body {
                 background-image: url("https://static.tumblr.com/uugbxhs/4eRq46g70/sww_tumblr_bg.jpg");
             }
@@ -164,7 +161,18 @@
             .post {
                 padding: 5px;
             }
-            /* StarWarsWallpaper.net theme edit end */
+        
+            .nav-wrapper {
+                z-index: 1000 !important;
+            }
+            
+            .nav-wrapper.nav-fixed {
+                top: 0px !important;
+            }
+            
+            .nav-menu {
+                margin-top: 24px !important;
+            }
 
             /* Custom CSS */
             {CustomCSS}
@@ -300,13 +308,12 @@
                                 </li>
                                 {/block:Pages}
                             {/block:HasPages}
-                            <!-- StarWarsWallpaper.net theme edit begin -->
+                            <!-- SWW -->
                             {block:IfShowArchiveNavItem}
                             <li class="nav-item nav-item--archive">
                                 <a href="/archive" class="label external-page">{lang:Archive}</a>
                             </li>
                             {/block:IfShowArchiveNavItem}
-                            <!-- StarWarsWallpaper.net theme edit end -->
                         </ul>
                     </nav>
                 </div>
@@ -2155,7 +2162,7 @@
         </script>
         {/block:IfSyntaxHighlighting}
         
-        <!-- StarWarsWallpaper.net theme edit begin -->
+        <!-- SWW -->
         {block:IfCopyrightName}
         <footer>
             <p>
@@ -2163,6 +2170,5 @@
             </p>
         </footer>
         {/block:IfCopyrightName}
-        <!-- StarWarsWallpaper.net theme edit end -->
     </body>
 </html>
