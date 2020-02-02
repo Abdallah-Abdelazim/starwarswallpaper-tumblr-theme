@@ -28,6 +28,8 @@
         <meta name="if:Override title font with Star Jedi" content="1">
         <meta name="if:Show archive nav item" content="1">
         <meta name="text:Copyright name" content="{Username}">
+        <meta name="text:Instagram link">
+        <meta name="text:Flickr link">
         {/block:Hidden}
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -269,13 +271,24 @@
                             {block:ShowDescription}
                             <span class="description">
                                 <!-- SWW -->
-                                {text:Site description}
-                                <a href="https://www.instagram.com/starwarswallpaper_net/" target="_blank">
-                                    <img src="https://static.tumblr.com/uugbxhs/CCAq4lc3p/instagram-icon.png"
-                                    alt="Follow me on Instagram" width="32" height="32"></a>
-                                <a href="https://www.flickr.com/starwarswallpaper/" target="_blank">
-                                    <img src="https://static.tumblr.com/uugbxhs/Eclq4lc3v/flickr-icon.png"
-                                    alt="Follow me on Flickr" width="32" height="32"></a>
+                                {block:IfSiteDescription}
+                                    {text:Site description}
+                                {/block:IfSiteDescription}
+                                {block:IfNotSiteDescription}
+                                    {block:Description}
+                                        {Description}
+                                    {/block:Description}
+                                {/block:IfNotSiteDescription}
+                                {block:IfInstagramLink}
+                                    <a href="{text:Instagram link}" target="_blank">
+                                        <img src="https://static.tumblr.com/uugbxhs/CCAq4lc3p/instagram-icon.png"
+                                        alt="Follow me on Instagram" width="32" height="32"></a>
+                                {/block:IfInstagramLink}
+                                {block:IfFlickrLink}
+                                    <a href="{text:Flickr link}" target="_blank">
+                                        <img src="https://static.tumblr.com/uugbxhs/Eclq4lc3v/flickr-icon.png"
+                                        alt="Follow me on Flickr" width="32" height="32"></a>
+                                {/block:IfFlickrLink}
                             </span>
                             {/block:ShowDescription}
                         </div>
